@@ -25,7 +25,7 @@ import javax.persistence.Table;
 // TODO: Auto-generated Javadoc
 
 /**
- * The Class AntragEntity.
+ * The Class BlogEntity.
  */
 @Entity
 @NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity e")
@@ -50,7 +50,7 @@ public class BlogEntity implements Serializable {
 
 	/** The Date */
 	@Column(name = "BLOG_DATE")
-	private LocalDate date;
+	private LocalDate datum;
 
 	/** The author */
 	@Column(name="BLOG_AUTHOR")
@@ -69,12 +69,12 @@ public class BlogEntity implements Serializable {
 		this.id = id;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getDatum() {
+		return datum;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setDatum(LocalDate datum) {
+		this.datum = datum;
 	}
 
 	public String getAuthor() {

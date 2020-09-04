@@ -13,7 +13,6 @@ package de.dfg.demo.blog.bo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * The Class AntragBO.
@@ -21,20 +20,29 @@ import java.util.Date;
 public class BlogBO implements Serializable {
 
 	private String titel;
-	private Date datum;
+	private LocalDate datum;
 	private String autor;
 	private String blogtext;
-	
+	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getTitel() {
 		return titel;
 	}
 	public void setTitel(String titel) {
 		this.titel = titel;
 	}
-	public Date getDatum() {
+	public LocalDate getDatum() {
 		return datum;
 	}
-	public void setDatum(Date datum) {
+	public void setDatum(LocalDate datum) {
 		this.datum = datum;
 	}
 	public String getAutor() {
