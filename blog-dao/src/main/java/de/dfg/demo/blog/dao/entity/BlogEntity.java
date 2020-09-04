@@ -13,9 +13,14 @@
 package de.dfg.demo.blog.dao.entity;
 
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 // TODO: Auto-generated Javadoc
 
@@ -23,7 +28,7 @@ import java.time.LocalDate;
  * The Class AntragEntity.
  */
 @Entity
-@NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity")
+@NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity e")
 @Table(name = "Blog")
 
 public class BlogEntity implements Serializable {
