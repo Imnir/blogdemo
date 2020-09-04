@@ -23,12 +23,10 @@ import java.time.LocalDate;
  * The Class AntragEntity.
  */
 @Entity
-@NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity e WHERE e.titelDeutsch LIKE :" + BlogEntity.QUERY_PARAMETER_TITEL)
+@NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity")
 @Table(name = "Blog")
-public class BlogEntity implements Serializable {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
+public class BlogEntity implements Serializable {
 
 	/** The Constant QUERY_BY_TITEL. */
 	public static final String QUERY_BY_TITEL = "BlogEntity.QUERY_BY_TITEL";
@@ -36,6 +34,10 @@ public class BlogEntity implements Serializable {
 	/** The Constant QUERY_PARAMETER_TITEL. */
 	public static final String QUERY_PARAMETER_TITEL = "QUERY_PARAMETER_TITEL";
 
+	/** The id. */
+	@Id
+	@Column(name = "BLOG_ID", nullable=false)
+	private long id;
 
 	/** The titel */
 	@Column(name="BLOG_TITEL")
@@ -52,6 +54,15 @@ public class BlogEntity implements Serializable {
 	/** The Blogtext */
 	@Column(name="BLOG_TEXT")
 	private String text;
+
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public LocalDate getDate() {
 		return date;
