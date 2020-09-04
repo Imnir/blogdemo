@@ -30,11 +30,10 @@ public class BlogEntity implements Serializable {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The Constant QUERY_BY_TITELD. */
-	public static final String QUERY_BY_TITEL = "AntragEntity.QUERY_BY_TITEL";
-
+	/** The Constant QUERY_BY_TITEL. */
+	public static final String QUERY_BY_TITEL = "BlogEntity.QUERY_BY_TITEL";
 	
-	/** The Constant QUERY_PARAMETER_TITELD. */
+	/** The Constant QUERY_PARAMETER_TITEL. */
 	public static final String QUERY_PARAMETER_TITEL = "QUERY_PARAMETER_TITEL";
 
 
