@@ -1,0 +1,17 @@
+.project
+.classpath
+.settings/
+jautodoc_preferences.xml
+
+.idea/
+*.iml
+
+*.code-workspace
+
+bin/
+target/
+node_modules/
+node/
+dist/
+
+webpack.generated.js

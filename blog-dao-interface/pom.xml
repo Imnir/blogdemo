@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+        <artifactId>blog</artifactId>
+        <groupId>de.dfg.demo</groupId>
+		<version>1.0.0</version>
+    </parent>
+	
+    <name>Blog DAO Interface</name>
+ 	<artifactId>blog-dao-interface</artifactId>
+    <packaging>jar</packaging>
+    
+	<dependencies>
+	    <dependency>
+            <groupId>de.dfg.demo</groupId>
+			<artifactId>blog-bo</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+         </dependency>
+
+
+	 </dependencies>	
+   </project>

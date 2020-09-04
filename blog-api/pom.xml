@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>blog</artifactId>
+		<groupId>de.dfg.demo</groupId>
+		    <version>1.0.0</version>
+	</parent>
+
+	<name>Blog API</name>
+	<artifactId>blog-api</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.dfg.demo</groupId>
+			<artifactId>blog-service-interface</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>de.dfg.demo</groupId>
+			<artifactId>blog-service</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.dfg.demo</groupId>
+			<artifactId>blog-dao-interface</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.dfg.demo</groupId>
+			<artifactId>blog-dao</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.dfg.demo</groupId>
+			<artifactId>blog-bo</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		
+</dependencies>
+		
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+			</plugin>
+	        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+           
+        </plugins>
+	</build>
+</project>
