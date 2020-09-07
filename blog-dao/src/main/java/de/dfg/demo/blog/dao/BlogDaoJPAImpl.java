@@ -54,5 +54,6 @@ public class BlogDaoJPAImpl implements BlogDao {
     @Override
     public void addBlog(BlogBO bo) {
         BlogEntity e = BlogMapper.mapBOToEntity(bo);
+        entityManager.merge(e);
     }
 }

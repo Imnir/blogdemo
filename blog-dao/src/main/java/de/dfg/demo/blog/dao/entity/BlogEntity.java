@@ -33,10 +33,10 @@ import javax.persistence.Table;
 
 public class BlogEntity implements Serializable {
 
-	/** The Constant QUERY_BY_DATE. */
+	/** The Constant QUERY_BY_ALL. */
 	public static final String QUERY_BY_ALL = "BlogEntity.QUERY_BY_ALL";
-	
-	/** The Constant QUERY_PARAMETER_TITEL. */
+
+	/** The Constant QUERY_PARAMETER_ALL. */
 	public static final String QUERY_PARAMETER_ALL = "QUERY_PARAMETER_ALL";
 
 	/** The id. */
