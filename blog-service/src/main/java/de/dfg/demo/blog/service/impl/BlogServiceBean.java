@@ -31,10 +31,11 @@ public class BlogServiceBean implements BlogService {
 
 	@EJB
 	BlogDao blogdao;
+	static long id;
 
 	@Override
 	public List<BlogBO> findAllBlogs() {
-		BlogBO blog1 = new BlogBO();
+		/**BlogBO blog1 = new BlogBO();
 		blog1.setAutor("Ich");
 		blog1.setBlogtext("Test");
 		blog1.setTitel("Titel");
@@ -45,8 +46,15 @@ public class BlogServiceBean implements BlogService {
 		List<BlogBO> list = new ArrayList<>();
 
 		list.add(blog1);
-		list.add(blog2);
+		list.add(blog2);*/
 
-		return list;
+		return blogdao.findAllBlogs();
+	}
+
+	@Override
+	public void speichern(BlogBO bo) {
+		bo.setId(id++);
+		bo.setDatum(LocalDate.now());
+		blogdao.addBlog(bo);
 	}
 }

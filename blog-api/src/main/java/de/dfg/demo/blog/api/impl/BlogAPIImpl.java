@@ -27,4 +27,9 @@ public class BlogAPIImpl implements BlogAPI, Serializable {
 		return blogservice.findAllBlogs();
 	}
 
+	@Override
+	public void speichern(BlogBO bo) {
+		blogservice.speichern(bo);
+	}
+
 }

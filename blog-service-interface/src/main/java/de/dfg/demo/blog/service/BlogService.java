@@ -25,5 +25,6 @@ import java.util.List;
 public interface BlogService {
 
 	public List<BlogBO> findAllBlogs();
+	public void speichern(BlogBO bo);
 
 }
