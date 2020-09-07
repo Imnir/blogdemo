@@ -28,16 +28,16 @@ import javax.persistence.Table;
  * The Class BlogEntity.
  */
 @Entity
-@NamedQuery(name = BlogEntity.QUERY_BY_TITEL, query = "SELECT e FROM BlogEntity e")
+@NamedQuery(name = BlogEntity.QUERY_BY_ALL, query = "SELECT e FROM BlogEntity e")
 @Table(name = "Blog")
 
 public class BlogEntity implements Serializable {
 
-	/** The Constant QUERY_BY_TITEL. */
-	public static final String QUERY_BY_TITEL = "BlogEntity.QUERY_BY_TITEL";
+	/** The Constant QUERY_BY_DATE. */
+	public static final String QUERY_BY_ALL = "BlogEntity.QUERY_BY_ALL";
 	
 	/** The Constant QUERY_PARAMETER_TITEL. */
-	public static final String QUERY_PARAMETER_TITEL = "QUERY_PARAMETER_TITEL";
+	public static final String QUERY_PARAMETER_ALL = "QUERY_PARAMETER_ALL";
 
 	/** The id. */
 	@Id

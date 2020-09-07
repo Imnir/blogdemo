@@ -13,20 +13,13 @@
 package de.dfg.demo.blog.service.impl;
 
 import de.dfg.demo.blog.bo.BlogBO;
+import de.dfg.demo.blog.dao.BlogDao;
 import de.dfg.demo.blog.service.BlogService;
-import de.dfg.neufa.DFGLogging;
-import de.dfg.neufa.antrag.bo.AntragBO;
-import de.dfg.neufa.antrag.dao.AntragDao;
-import de.dfg.neufa.antrag.service.AntragService;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 
 /**
@@ -35,6 +28,8 @@ import java.util.logging.Logger;
 @Stateless
 public class BlogServiceBean implements BlogService {
 
+	@EJB
+	BlogDao blogdao;
 
 	@Override
 	public List<BlogBO> findAllBlogs() {
@@ -42,7 +37,9 @@ public class BlogServiceBean implements BlogService {
 		blog1.setAutor("Ich");
 		blog1.setBlogtext("Test");
 		blog1.setTitel("Titel");
-		blog1.setDatum(new Date());
+		LocalDate date = new LocalDate();
+		blog1.setDatum(new LocalDate(1,1,1));
+
 
 		BlogBO blog2 = blog1;
 		List<BlogBO> list = new ArrayList<>();
