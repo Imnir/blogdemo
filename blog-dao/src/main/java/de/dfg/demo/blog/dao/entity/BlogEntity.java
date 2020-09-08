@@ -30,7 +30,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQuery(name = BlogEntity.QUERY_BY_ALL, query = "SELECT e FROM BlogEntity e")
 @NamedQuery(name = BlogEntity.QUERY_BY_ID, query = "SELECT e FROM BlogEntity e WHERE e.id =:" + BlogEntity.QUERY_PARAMETER_ID)
-@NamedQuery(name = BlogEntity.QUERY_BY_DATE, query = "SELECT e FROM BlogEntity e WHERE e.date =:" + BlogEntity.QUERY_PARAMETER_DATE)
+@NamedQuery(name = BlogEntity.QUERY_BY_DATE, query = "SELECT e FROM BlogEntity e WHERE e.datum =:" + BlogEntity.QUERY_PARAMETER_DATE)
 @Table(name = "Blog")
 
 public class BlogEntity implements Serializable {
