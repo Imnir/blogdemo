@@ -12,13 +12,15 @@
 
 package de.dfg.demo.blog.service.impl;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
 import de.dfg.demo.blog.bo.BlogBO;
 import de.dfg.demo.blog.dao.BlogDao;
 import de.dfg.demo.blog.service.BlogService;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import java.time.LocalDate;
-import java.util.List;
 
 
 /**
@@ -33,11 +35,6 @@ public class BlogServiceBean implements BlogService {
 
 	@Override
 	public List<BlogBO> findAllBlogs() {
-		BlogBO bo = new BlogBO();
-		bo.setBlogtext("Text");
-		bo.setAutor("Autor");
-		bo.setTitel("Titel");
-		this.speichern(bo);
 		return blogdao.findAllBlogs();
 	}
 
