@@ -1,5 +1,6 @@
 package de.dfg.demo.blog.dao;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,5 +56,25 @@ public class BlogDaoJPAImpl implements BlogDao {
     public void addBlog(BlogBO bo) {
         BlogEntity e = BlogMapper.mapBOToEntity(bo);
         entityManager.merge(e);
+    }
+
+    @Override
+    public BlogBO getBlogByID(Long id) {
+        TypedQuery<BlogEntity> query = entityManager.createNamedQuery(BlogEntity.QUERY_BY_ID, BlogEntity.class);
+        query.setParameter(BlogEntity.QUERY_PARAMETER_ID, id);
+        return BlogMapper.mapEntityToBO(query.getSingleResult());
+    }
+
+    @Override
+    public List<BlogBO> findBlogByDate(LocalDate date) {
+        TypedQuery<BlogEntity> query = entityManager.createNamedQuery(BlogEntity.QUERY_BY_DATE, BlogEntity.class);
+        query.setParameter(BlogEntity.QUERY_PARAMETER_DATE, date);
+        query.setMaxResults(100);
+        List<BlogEntity> entities = query.getResultList();
+        List<BlogBO> bos = new ArrayList<>();
+        for(BlogEntity e:entities) {
+            bos.add(BlogMapper.mapEntityToBO(e));
+        }
+        return bos;
     }
 }

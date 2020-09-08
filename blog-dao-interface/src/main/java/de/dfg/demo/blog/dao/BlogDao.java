@@ -15,6 +15,7 @@ import de.dfg.demo.blog.bo.BlogBO;
 import de.dfg.neufa.antrag.bo.AntragBO;
 
 import javax.ejb.Local;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -31,12 +32,11 @@ public interface BlogDao {
 	 */
 	public List<BlogBO> findAllBlogs();
 
-	/**
-	 * Blog anlegen
-	 *
-	 *
-	 */
-	
 	public void addBlog(BlogBO bo);
+
+	public BlogBO getBlogByID(Long id);
+
+	public List<BlogBO> findBlogByDate(LocalDate date);
+
 
 }

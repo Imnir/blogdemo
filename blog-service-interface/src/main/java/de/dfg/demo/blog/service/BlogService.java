@@ -15,6 +15,7 @@ import de.dfg.demo.blog.bo.BlogBO;
 import de.dfg.neufa.antrag.bo.AntragBO;
 
 import javax.ejb.Local;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -24,7 +25,12 @@ import java.util.List;
 @Local
 public interface BlogService {
 
-	public List<BlogBO> findAllBlogs();
-	public void speichern(BlogBO bo);
+	List<BlogBO> findAllBlogs();
+
+	void speichern(BlogBO bo);
+
+	List<BlogBO> findBlogByDate(LocalDate date);
+
+	BlogBO getBlogByID (Long id);
 
 }

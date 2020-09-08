@@ -29,6 +29,8 @@ import javax.persistence.Table;
  */
 @Entity
 @NamedQuery(name = BlogEntity.QUERY_BY_ALL, query = "SELECT e FROM BlogEntity e")
+@NamedQuery(name = BlogEntity.QUERY_BY_ID, query = "SELECT e FROM BlogEntity e WHERE e.id =:" + BlogEntity.QUERY_PARAMETER_ID)
+@NamedQuery(name = BlogEntity.QUERY_BY_DATE, query = "SELECT e FROM BlogEntity e WHERE e.date =:" + BlogEntity.QUERY_PARAMETER_DATE)
 @Table(name = "Blog")
 
 public class BlogEntity implements Serializable {
@@ -36,8 +38,17 @@ public class BlogEntity implements Serializable {
 	/** The Constant QUERY_BY_ALL. */
 	public static final String QUERY_BY_ALL = "BlogEntity.QUERY_BY_ALL";
 
-	/** The Constant QUERY_PARAMETER_ALL. */
-	public static final String QUERY_PARAMETER_ALL = "QUERY_PARAMETER_ALL";
+	/** The Constant QUERY_BY_ID. */
+	public static final String QUERY_BY_ID = "AntragEntity.QUERY_BY_ID";
+
+	/** The Constant QUERY_PARAMETER_ID. */
+	public static final String QUERY_PARAMETER_ID = "QUERY_PARAMETER_ID";
+
+	/** The Constant QUERY_BY_DATE. */
+	public static final String QUERY_BY_DATE = "BlogEntity.QUERY_BY_DATE";
+
+	/** The Constant QUERY_PARAMETER_DATE. */
+	public static final String QUERY_PARAMETER_DATE = "QUERY_PARAMETER_DATE";
 
 	/** The id. */
 	@Id

@@ -16,10 +16,8 @@ import de.dfg.demo.blog.bo.BlogBO;
 import de.dfg.demo.blog.dao.BlogDao;
 import de.dfg.demo.blog.service.BlogService;
 import javax.ejb.EJB;
-import javax.ejb.Local;
 import javax.ejb.Stateless;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,23 +29,15 @@ public class BlogServiceBean implements BlogService {
 
 	@EJB
 	BlogDao blogdao;
-	static long id;
+	static long id = 0;
 
 	@Override
 	public List<BlogBO> findAllBlogs() {
-		/**BlogBO blog1 = new BlogBO();
-		blog1.setAutor("Ich");
-		blog1.setBlogtext("Test");
-		blog1.setTitel("Titel");
-		blog1.setDatum(LocalDate.now());
-
-
-		BlogBO blog2 = blog1;
-		List<BlogBO> list = new ArrayList<>();
-
-		list.add(blog1);
-		list.add(blog2);*/
-
+		BlogBO bo = new BlogBO();
+		bo.setBlogtext("Text");
+		bo.setAutor("Autor");
+		bo.setTitel("Titel");
+		this.speichern(bo);
 		return blogdao.findAllBlogs();
 	}
 
@@ -56,5 +46,15 @@ public class BlogServiceBean implements BlogService {
 		bo.setId(id++);
 		bo.setDatum(LocalDate.now());
 		blogdao.addBlog(bo);
+	}
+
+	@Override
+	public List<BlogBO> findBlogByDate(LocalDate date) {
+		return blogdao.findBlogByDate(date);
+	}
+
+	@Override
+	public BlogBO getBlogByID(Long id) {
+		return blogdao.getBlogByID(id);
 	}
 }
