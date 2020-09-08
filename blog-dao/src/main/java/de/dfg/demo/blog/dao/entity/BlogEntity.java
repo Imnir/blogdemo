@@ -39,7 +39,7 @@ public class BlogEntity implements Serializable {
 	public static final String QUERY_BY_ALL = "BlogEntity.QUERY_BY_ALL";
 
 	/** The Constant QUERY_BY_ID. */
-	public static final String QUERY_BY_ID = "AntragEntity.QUERY_BY_ID";
+	public static final String QUERY_BY_ID = "BlogEntity.QUERY_BY_ID";
 
 	/** The Constant QUERY_PARAMETER_ID. */
 	public static final String QUERY_PARAMETER_ID = "QUERY_PARAMETER_ID";
