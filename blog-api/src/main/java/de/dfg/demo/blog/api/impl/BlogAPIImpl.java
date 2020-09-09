@@ -18,12 +18,6 @@ public class BlogAPIImpl implements BlogAPI, Serializable {
 	BlogService blogservice;
 
 	@Override
-	public String getInfo(){
-		String msg = "Mein erster Webservice !!!";
-		return msg;
-	}
-
-	@Override
 	public List<BlogBO> findAllBlogs() {
 		return blogservice.findAllBlogs();
 	}

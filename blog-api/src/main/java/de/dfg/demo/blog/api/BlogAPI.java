@@ -9,11 +9,6 @@ import java.util.List;
 
 @Path("blog")
 public interface BlogAPI {
- 
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/info")
-	String getInfo();
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

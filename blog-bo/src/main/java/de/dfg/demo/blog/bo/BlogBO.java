@@ -23,7 +23,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class BlogBO implements Serializable {
 
-	private static final DateTimeFormatter  df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+	//private static final DateTimeFormatter  df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	private String titel;
 	private LocalDate datum;
 	private String autor;
@@ -63,8 +63,8 @@ public class BlogBO implements Serializable {
 	public void setBlogtext(String blogtext) {
 		this.blogtext = blogtext;
 	}
-	public String getDatumAsString() {
+	/**public String getDatumAsString() {
 		return BlogBO.df.format(this.getDatum());
-	}
+	}*/
 
 }
