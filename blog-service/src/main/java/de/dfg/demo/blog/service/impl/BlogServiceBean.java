@@ -30,7 +30,8 @@ import de.dfg.demo.blog.service.BlogService;
 public class BlogServiceBean implements BlogService {
 
 	@EJB
-	BlogDao blogdao;
+	public BlogDao blogdao;
+	
 	private static long id = 0;
 
 	@Override
@@ -39,11 +40,7 @@ public class BlogServiceBean implements BlogService {
 	}
 
 	@Override
-	public void speichern(String titel, String blogText, String author) {
-		BlogBO bo = new BlogBO();
-		bo.setTitel(titel);
-		bo.setBlogtext(blogText);
-		bo.setAutor(author);
+	public void speichern(BlogBO bo) {
 		bo.setId(id++);
 		bo.setDatum(LocalDate.now());
 		blogdao.addBlog(bo);

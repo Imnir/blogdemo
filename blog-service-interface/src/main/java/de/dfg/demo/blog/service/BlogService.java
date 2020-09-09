@@ -11,12 +11,12 @@
  **/
 package de.dfg.demo.blog.service;
 
-import de.dfg.demo.blog.bo.BlogBO;
-import de.dfg.neufa.antrag.bo.AntragBO;
-
-import javax.ejb.Local;
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.ejb.Local;
+
+import de.dfg.demo.blog.bo.BlogBO;
 
 
 /**
@@ -25,14 +25,14 @@ import java.util.List;
 @Local
 public interface BlogService {
 
-	List<BlogBO> findAllBlogs();
+	public List<BlogBO> findAllBlogs();
 
-	void speichern(String titel, String blogText, String author);
+	public void speichern(BlogBO bo);
 
-	List<BlogBO> findBlogByDate(LocalDate date);
+	public List<BlogBO> findBlogByDate(LocalDate date);
 
-	BlogBO getBlogByID (Long id);
+	public BlogBO getBlogByID (Long id);
 
-	void deleteBlog (Long id);
+	public void deleteBlog (Long id);
 
 }

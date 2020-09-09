@@ -1,11 +1,18 @@
 package de.dfg.demo.blog.api;
 
-import de.dfg.demo.blog.bo.BlogBO;
-
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import de.dfg.demo.blog.bo.BlogBO;
 
 @Path("blog")
 public interface BlogAPI {
@@ -17,7 +24,7 @@ public interface BlogAPI {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	void speichern(String titel, String blogText, String author);
+	void speichern(BlogBO bo);
 
 	@DELETE
 	@Path("/blog/{blogId}")

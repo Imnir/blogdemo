@@ -68,7 +68,7 @@ public class BlogEntity implements Serializable {
 	private String author;
 
 	/** The Blogtext */
-	@Column(name="BLOG_TEXT")
+	@Column(name="BLOG_TEXT", length=3000)
 	private String text;
 
 
