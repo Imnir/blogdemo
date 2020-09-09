@@ -23,17 +23,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class BlogBO implements Serializable {
 
-	private static final DateTimeFormatter  df = DateTimeFormatter .ofPattern("dd.MM.yyyy");
+	private static final DateTimeFormatter  df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	private String titel;
 	private LocalDate datum;
 	private String autor;
 	private String blogtext;
-	private static long id = 0L;
+	private long id;
 
-	public BlogBO(){
-		id++;
-		this.datum = LocalDate.now();
-	}
 
 	public long getId() {
 		return id;
