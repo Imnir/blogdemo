@@ -77,4 +77,10 @@ public class BlogDaoJPAImpl implements BlogDao {
         }
         return bos;
     }
+
+    @Override
+    public void deleteBlog(Long id) {
+        BlogEntity entity = entityManager.find(BlogEntity.class, id);
+        entityManager.remove(entity);
+    }
 }

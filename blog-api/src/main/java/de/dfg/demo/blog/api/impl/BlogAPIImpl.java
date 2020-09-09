@@ -7,6 +7,7 @@ import de.dfg.demo.blog.service.BlogService;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -30,6 +31,21 @@ public class BlogAPIImpl implements BlogAPI, Serializable {
 	@Override
 	public void speichern(BlogBO bo) {
 		blogservice.speichern(bo);
+	}
+
+	@Override
+	public void deleteBlog(Long id) {
+
+	}
+
+	@Override
+	public BlogBO getBlogById(Long id) {
+		return blogservice.getBlogByID(id);
+	}
+
+	@Override
+	public List<BlogBO> findBlogByDate(LocalDate date) {
+		return blogservice.findBlogByDate(date);
 	}
 
 }

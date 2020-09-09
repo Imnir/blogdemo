@@ -33,4 +33,6 @@ public interface BlogService {
 
 	BlogBO getBlogByID (Long id);
 
+	void deleteBlog (Long id);
+
 }

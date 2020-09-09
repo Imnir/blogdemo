@@ -31,7 +31,6 @@ public class BlogServiceBean implements BlogService {
 
 	@EJB
 	BlogDao blogdao;
-	static long id = 0;
 
 	@Override
 	public List<BlogBO> findAllBlogs() {
@@ -40,8 +39,6 @@ public class BlogServiceBean implements BlogService {
 
 	@Override
 	public void speichern(BlogBO bo) {
-		bo.setId(id++);
-		bo.setDatum(LocalDate.now());
 		blogdao.addBlog(bo);
 	}
 
@@ -53,5 +50,10 @@ public class BlogServiceBean implements BlogService {
 	@Override
 	public BlogBO getBlogByID(Long id) {
 		return blogdao.getBlogByID(id);
+	}
+
+	@Override
+	public void deleteBlog(Long id) {
+		blogdao.deleteBlog(id);
 	}
 }

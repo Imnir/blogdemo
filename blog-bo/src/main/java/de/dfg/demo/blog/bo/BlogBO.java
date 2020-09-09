@@ -11,6 +11,7 @@
  **/
 package de.dfg.demo.blog.bo;
 
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -27,7 +28,12 @@ public class BlogBO implements Serializable {
 	private LocalDate datum;
 	private String autor;
 	private String blogtext;
-	private long id;
+	private static long id = 0L;
+
+	public BlogBO(){
+		id++;
+		this.datum = LocalDate.now();
+	}
 
 	public long getId() {
 		return id;

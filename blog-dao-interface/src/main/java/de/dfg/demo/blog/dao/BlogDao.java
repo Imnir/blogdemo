@@ -30,13 +30,15 @@ public interface BlogDao {
 	 *
 	 * @return the list
 	 */
-	public List<BlogBO> findAllBlogs();
+	List<BlogBO> findAllBlogs();
 
-	public void addBlog(BlogBO bo);
+	void addBlog(BlogBO bo);
 
-	public BlogBO getBlogByID(Long id);
+	BlogBO getBlogByID(Long id);
 
-	public List<BlogBO> findBlogByDate(LocalDate date);
+	List<BlogBO> findBlogByDate(LocalDate date);
+
+	void deleteBlog(Long id);
 
 
 }
