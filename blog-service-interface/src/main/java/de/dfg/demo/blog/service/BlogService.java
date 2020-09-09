@@ -27,7 +27,7 @@ public interface BlogService {
 
 	List<BlogBO> findAllBlogs();
 
-	void speichern(BlogBO bo);
+	void speichern(String titel, String blogText, String author);
 
 	List<BlogBO> findBlogByDate(LocalDate date);
 

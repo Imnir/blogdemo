@@ -39,7 +39,11 @@ public class BlogServiceBean implements BlogService {
 	}
 
 	@Override
-	public void speichern(BlogBO bo) {
+	public void speichern(String titel, String blogText, String author) {
+		BlogBO bo = new BlogBO();
+		bo.setTitel(titel);
+		bo.setBlogtext(blogText);
+		bo.setAutor(author);
 		bo.setId(id++);
 		bo.setDatum(LocalDate.now());
 		blogdao.addBlog(bo);

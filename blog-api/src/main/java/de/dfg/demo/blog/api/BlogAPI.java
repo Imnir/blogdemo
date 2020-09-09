@@ -17,7 +17,7 @@ public interface BlogAPI {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	void speichern(BlogBO bo);
+	void speichern(String titel, String blogText, String author);
 
 	@DELETE
 	@Path("/blog/{blogId}")

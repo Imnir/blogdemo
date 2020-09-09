@@ -23,13 +23,13 @@ public class BlogAPIImpl implements BlogAPI, Serializable {
 	}
 
 	@Override
-	public void speichern(BlogBO bo) {
-		blogservice.speichern(bo);
+	public void speichern(String titel, String blogText, String author) {
+		blogservice.speichern(titel, blogText, author);
 	}
 
 	@Override
-	public void deleteBlog(Long id) {
-
+	public void deleteBlog(Long id){
+		blogservice.deleteBlog(id);
 	}
 
 	@Override
