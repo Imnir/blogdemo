@@ -28,6 +28,7 @@ public interface BlogAPI {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/change")
 	void changeBlog(Long id, BlogBO bo);
 
 	@DELETE

@@ -41,8 +41,10 @@ public class BlogServiceBean implements BlogService {
 
 	@Override
 	public void speichern(BlogBO bo) {
-		bo.setId(id++);
-		bo.setDatum(LocalDate.now());
+		if (bo.getId() == null) {
+			bo.setId(id++);
+			bo.setDatum(LocalDate.now());
+		}
 		blogdao.addBlog(bo);
 	}
 

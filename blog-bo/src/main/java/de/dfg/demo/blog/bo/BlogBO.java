@@ -28,14 +28,14 @@ public class BlogBO implements Serializable {
 	private LocalDate datum;
 	private String autor;
 	private String blogtext;
-	private long id;
+	private Long id;
 
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
