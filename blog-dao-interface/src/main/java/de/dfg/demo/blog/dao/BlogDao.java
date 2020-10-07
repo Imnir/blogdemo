@@ -40,5 +40,6 @@ public interface BlogDao {
 
 	void deleteBlog(Long id);
 
+	void changeBlog(Long id, BlogBO bo);
 
 }

@@ -29,6 +29,11 @@ public class BlogAPIImpl implements BlogAPI, Serializable {
 	}
 
 	@Override
+	public void changeBlog(Long id, BlogBO bo) {
+		blogservice.changeBlog(id, bo);
+	}
+
+	@Override
 	public void deleteBlog(Long id){
 		blogservice.deleteBlog(id);
 	}

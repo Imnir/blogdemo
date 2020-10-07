@@ -60,4 +60,9 @@ public class BlogServiceBean implements BlogService {
 	public void deleteBlog(Long id) {
 		blogdao.deleteBlog(id);
 	}
+
+	@Override
+	public void changeBlog(Long id, BlogBO bo) {
+		blogdao.changeBlog(id, bo);
+	}
 }

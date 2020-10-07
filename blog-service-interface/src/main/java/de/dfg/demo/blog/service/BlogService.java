@@ -25,14 +25,16 @@ import de.dfg.demo.blog.bo.BlogBO;
 @Local
 public interface BlogService {
 
-	public List<BlogBO> findAllBlogs();
+	List<BlogBO> findAllBlogs();
 
-	public void speichern(BlogBO bo);
+	void speichern(BlogBO bo);
 
-	public List<BlogBO> findBlogByDate(LocalDate date);
+	List<BlogBO> findBlogByDate(LocalDate date);
 
-	public BlogBO getBlogByID (Long id);
+	BlogBO getBlogByID (Long id);
 
-	public void deleteBlog (Long id);
+	void deleteBlog (Long id);
+
+	void changeBlog (Long id, BlogBO bo);
 
 }

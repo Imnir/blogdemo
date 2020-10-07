@@ -83,4 +83,14 @@ public class BlogDaoJPAImpl implements BlogDao {
         BlogEntity entity = entityManager.find(BlogEntity.class, id);
         entityManager.remove(entity);
     }
+
+    @Override
+    public void changeBlog(Long id, BlogBO bo) {
+        BlogEntity neu = BlogMapper.mapBOToEntity(bo);
+        BlogEntity alt = entityManager.find(BlogEntity.class, id);
+        alt.setAuthor(neu.getAuthor());
+        alt.setText(neu.getText());
+        alt.setDatum(neu.getDatum());
+        alt.setTitel(neu.getTitel());
+    }
 }

@@ -26,8 +26,12 @@ public interface BlogAPI {
 	@Consumes(MediaType.APPLICATION_JSON)
 	void speichern(BlogBO bo);
 
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	void changeBlog(Long id, BlogBO bo);
+
 	@DELETE
-	@Path("/blog/{blogId}")
+	@Path("/{blogId}")
 	void deleteBlog(@PathParam("blogId") Long id);
 
 	@GET
